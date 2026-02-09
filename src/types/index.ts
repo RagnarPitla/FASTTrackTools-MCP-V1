@@ -61,3 +61,48 @@ export interface BestPractice {
   severity: "Critical" | "High" | "Medium" | "Low";
   tags: string[];
 }
+
+// ── Data Extraction Types ──
+
+export type ExtractionOutputFormat =
+  | "json"
+  | "markdown"
+  | "summary"
+  | "key-value"
+  | "csv";
+
+export interface ExtractionMetadata {
+  source: "email" | "pdf" | "dataverse" | "code" | "json";
+  extractedAt: string;
+  outputFormat: ExtractionOutputFormat;
+  recordCount: number;
+  targetTool?: string;
+  warnings?: string[];
+}
+
+export interface ExtractionResult {
+  metadata: ExtractionMetadata;
+  records: Record<string, unknown>[];
+  fieldHints?: Record<string, string>;
+}
+
+// ── Auth Types ──
+
+export interface GraphAuthConfig {
+  tenantId: string;
+  clientId: string;
+  clientSecret: string;
+  scopes?: string[];
+}
+
+export interface DataverseAuthConfig {
+  tenantId: string;
+  clientId: string;
+  clientSecret: string;
+  environmentUrl: string;
+}
+
+export interface CachedToken {
+  accessToken: string;
+  expiresAt: number;
+}

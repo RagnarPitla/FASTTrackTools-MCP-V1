@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  title: FastTrack D365 MCP Server
+  description: >-
+    Microsoft FastTrack MCP Server for Dynamics 365 Finance & Operations.
+    Provides tools for managing customer engagements, D365 environments,
+    implementation checklists, and best practices knowledge base.
+  version: 1.1.0
+host: YOUR-APP-NAME.azurewebsites.net
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /mcp:
+    post:
+      summary: >-
+        FastTrack D365 Implementation Tools — manage customer engagements,
+        validate environments, track implementation checklists, and search
+        best practices for Dynamics 365 Finance & Operations.
+      description: >-
+        MCP Streamable HTTP endpoint for the FastTrack D365 MCP Server.
+        Supports tools: list_customers, get_customer, add_customer,
+        update_customer_status, get_environments, add_environment,
+        validate_environment_readiness, get_implementation_checklist,
+        update_checklist_item, add_checklist_item, search_best_practices.
+      operationId: InvokeMCP
+      x-ms-agentic-protocol: mcp-streamable-1.0
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error

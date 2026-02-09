@@ -1,6 +1,6 @@
 {
   "name": "fasttrack-mcp-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Microsoft FastTrack MCP Server for Dynamics 365 Finance & Operations",
   "type": "module",
   "bin": {
@@ -9,14 +9,19 @@
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
     "start": "node build/index.js",
+    "start:http": "node build/http.js",
     "dev": "tsc --watch"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.26.0",
+    "express": "^5.1.0",
+    "pdf-parse": "^2.4.5",
     "zod": "^3.23.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^22.0.0",
+    "@types/pdf-parse": "^1.1.5",
     "typescript": "^5.7.0"
   },
   "keywords": [
@@ -25,7 +30,8 @@
     "dynamics365",
     "d365",
     "fno",
-    "microsoft"
+    "microsoft",
+    "copilot-studio"
   ],
   "license": "MIT"
 }
