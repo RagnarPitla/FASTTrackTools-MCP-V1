@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "fasttrack-d365": {
+      "command": "node",
+      "args": ["build/index.js"],
+      "cwd": "."
+    }
+  }
+}
