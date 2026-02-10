@@ -16,6 +16,13 @@ import { registerUpdateProgress } from "./implementation/updateProgress.js";
 // Best Practices tools
 import { registerSearchBestPractices } from "./bestPractices/searchBestPractices.js";
 
+// Data Extraction tools
+import { registerExtractEmail } from "./extraction/extractEmail.js";
+import { registerExtractPdf } from "./extraction/extractPdf.js";
+import { registerExtractDataverse } from "./extraction/extractDataverse.js";
+import { registerExtractCode } from "./extraction/extractCode.js";
+import { registerExtractJson } from "./extraction/extractJson.js";
+
 export function registerAllTools(server: McpServer): void {
   // Customer Management
   registerListCustomers(server);
@@ -32,4 +39,11 @@ export function registerAllTools(server: McpServer): void {
 
   // Knowledge Base
   registerSearchBestPractices(server);
+
+  // Data Extraction
+  registerExtractEmail(server);
+  registerExtractPdf(server);
+  registerExtractDataverse(server);
+  registerExtractCode(server);
+  registerExtractJson(server);
 }
